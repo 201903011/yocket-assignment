@@ -50,9 +50,9 @@ export default function Router() {
 }
 
 // GENERAL
-const DashBoard = Loadable(lazy(() => import("../pages/app/weather_search")));
-const Game = Loadable(lazy(() => import("../pages/app/main_map")));
-const Details = Loadable(lazy(() => import("../pages/app/city_details")));
+const DashBoard = Loadable(lazy(() => import("../pages/app/home")));
+const Game = Loadable(lazy(() => import("../pages/app/game")));
+const Details = Loadable(lazy(() => import("../pages/app/details")));
 
 // NOT FOUND
 const Page500 = Loadable(lazy(() => import("../pages/page_500")));

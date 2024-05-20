@@ -6,13 +6,19 @@ import { forwardRef } from "react";
 
 const Page = forwardRef(({ children, title = "", meta, ...other }, ref) => (
   <>
-    <Helmet>
-      <title>{`${title} `}</title>
-      {meta}
-    </Helmet>
+    <div className="h-screen bg bg-white  dark:bg-gray-800">
+      <Helmet>
+        <title>{`${title} `}</title>
+        {meta}
+      </Helmet>
 
-    <div ref={ref} {...other}>
-      {children}
+      <div
+        ref={ref}
+        {...other}
+        className="max-w-screen-xl bg bg-white  dark:bg-gray-800"
+      >
+        {children}
+      </div>
     </div>
   </>
 ));
