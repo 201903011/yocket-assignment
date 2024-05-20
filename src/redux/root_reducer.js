@@ -1,28 +1,28 @@
-import { combineReducers } from 'redux';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 // slices
-import weatherReducer from './slices/weather';
-import groupweatherReducer from './slices/groupweather';
+import gameReducer from "./slices/game";
+import copReducer from "./slices/cop";
 // ----------------------------------------------------------------------
 
 const rootPersistConfig = {
-  key: 'root',
+  key: "root",
   storage,
-  keyPrefix: 'redux-',
+  keyPrefix: "redux-",
   whitelist: [],
 };
 
 const productPersistConfig = {
-  key: 'product',
+  key: "product",
   storage,
-  keyPrefix: 'redux-',
-  whitelist: ['sortBy', 'checkout'],
+  keyPrefix: "redux-",
+  whitelist: ["sortBy", "checkout"],
 };
 
 const rootReducer = combineReducers({
-     weather: weatherReducer,
-     groupweather: groupweatherReducer,
+  game: gameReducer,
+  cop: copReducer,
 });
 
 export { rootPersistConfig, rootReducer };

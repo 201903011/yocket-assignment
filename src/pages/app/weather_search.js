@@ -1,22 +1,15 @@
 import { useState, useEffect } from "react";
 // form
 import { useForm } from "react-hook-form";
-// @mui
-import DatePicker from "@mui/lab/DatePicker";
-import { LoadingButton } from "@mui/lab";
-import { Alert, Box, Card, Container, Stack, Typography } from "@mui/material";
 // redux
 import { useDispatch, useSelector } from "../../redux/store";
-import { getWeatherByCity } from "../../redux/slices/weather";
-// routes
-// components
-import Page from "../../components/page";
-import { FormProvider, RHFTextField } from "../../components/hook-form";
+import { getWeatherByCity } from "../../redux/slices/game";
 //
 import useIsMountedRef from "../../hooks/use_ismounted_ref";
-import useResponsive from "../../hooks/use_responsive";
-import LoadingScreen from "../../components/loading_screen";
 import InfoCard from "../../sections/app/infocard";
+// import { Page } from "../../components/page";
+import { Page } from "../../components/page";
+import { Dropdown } from "../../components/dropdown";
 
 const selectedEventSelector = (state) => {
   const { weather } = state;
@@ -69,42 +62,9 @@ function WeatherSearch() {
       }
     }
   };
-  const isDesktop = useResponsive("up", "lg");
+  const isDesktop = true;
 
-  return (
-    <Page title="App">
-      {weatherData.error != null && (
-        <Alert severity="error">No data Found</Alert>
-      )}
-
-      <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <Stack
-          spacing={2}
-          direction={{ xs: "column", sm: "row" }}
-          sx={{ p: 3, bgcolor: "background.neutral" }}
-        >
-          <RHFTextField name="city" type="name" label="City" />
-
-          <Box width={isDesktop ? 200 : "lg"}>
-            <LoadingButton
-              fullWidth
-              size="large"
-              type="submit"
-              variant="contained"
-              loading={isSubmitting}
-            >
-              Get weather
-            </LoadingButton>
-          </Box>
-        </Stack>
-      </FormProvider>
-      <Box height={15} />
-      {weatherData.isLoading && <LoadingScreen />}
-      <Box p={3}>
-        <InfoCard info={weatherData} />
-      </Box>
-    </Page>
-  );
+  return <></>;
 }
 
 export default WeatherSearch;

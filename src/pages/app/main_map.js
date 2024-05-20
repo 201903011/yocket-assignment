@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Page from "../../components/page";
+import Dropdown from "../../components/dropdown";
 
 function MainMap() {
   return (
-    <div>MainMap</div>
-  )
+    <Page title="MainMap">
+      <Dropdown />
+    </Page>
+  );
 }
 
-export default MainMap
+export default MainMap;

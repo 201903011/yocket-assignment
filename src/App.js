@@ -5,9 +5,7 @@ import ThemeProvider from "./theme/theme";
 function App() {
   return (
     <HelmetProvider>
-      <ThemeProvider>
-        <Router />
-      </ThemeProvider>
+      <Router />
     </HelmetProvider>
   );
 }
